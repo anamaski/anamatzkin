@@ -1,0 +1,29 @@
+Crear proyecto en Vue
+
+Requisitos:
+Node.js instalado
+Terminal
+Editor (ej: VS Code)
+Conocimientos básicos: HTML, CSS, JavaScript
+Crear proyecto:
+
+Comando:
+
+npm create vite@latest
+Usar @latest → última versión
+Seguir asistente de configuración
+
+Instalar dependencias:
+
+npm install
+Instala lo definido en package.json
+Estructura del proyecto:
+src/ → código fuente
+App.vue → componente principal
+main.js → punto de entrada
+
+Ejecutar proyecto:
+
+npm run dev
+Levanta servidor local
+URL típica: http://localhost:5173
