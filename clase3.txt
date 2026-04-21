@@ -1,0 +1,17 @@
+Node y NPM
+
+Introducción En esta unidad conocerás el rol de Node.js y NPM dentro del ecosistema de VUE. Aprenderás para qué se utilizan, cómo interactúan entre sí y cómo usarlos para iniciar un servidor de desarrollo, instalar dependencias y gestionar el flujo de trabajo moderno. Este paso es clave para comenzar a trabajar con proyectos React de forma profesional y preparar el terreno para crear y ejecutar tus primeras aplicaciones completas.
+
+Teoría Comandos básicos de NPM npm init, Crea un archivo package.json para tu proyecto. npm create vite@latest , crea el proyecto a través de vite, con VUE y JS npm install, Instala las dependencias listadas en package.json npm run dev, levanta un servidor local con vite el framework de vue.
+
+Ejemplo: Para iniciar un nuevo proyecto, primero ejecutas npm init para crear la configuración básica. Luego, instalas VUE con npm create vite@latest. Finalmente, con npm run dev levantas el servidor local para ver tu app en el navegador.
+
+Contexto En el desarrollo de aplicaciones VUE, no basta con escribir código en JavaScript; necesitas un entorno que te permita probar y ver los resultados en tiempo real. Aquí es donde Node.js y NPM juegan un papel crucial.
+
+Node.js proporciona la plataforma para ejecutar herramientas que construyen y sirven tu aplicación localmente, mientras que NPM gestiona las bibliotecas y scripts que usas para automatizar tareas como iniciar un servidor o compilar código.
+
+Por ejemplo, cuando ejecutas npm run dev, NPM corre un script que generalmente inicia un servidor local. Esto te permite ver tu aplicación en el navegador y hacer cambios que se reflejan al instante.
+
+Además, al instalar paquetes con NPM, puedes agregar funcionalidades a tu proyecto sin tener que escribir todo desde cero, como manejar rutas, estados o estilos.
+
+Este flujo de trabajo es estándar en la industria del desarrollo web y te prepara para trabajar en proyectos reales y colaborativos, donde la gestión eficiente de dependencias y entornos es esencial.

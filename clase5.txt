@@ -1,0 +1,2 @@
+en git existe un concepto que se denomina ramas o BRANCH.
+cuando se trabaja en git es como una linea de tiempo de la cual se pueden sacar ramas. al hacer a copia e un proyecto, podes crear una nueva rama q se llame clase 2 por ej. en esta rama podes crear hacer modificaciones y todo eso y al final unirlo a la linea MAIN xq al final del dia es un mismo proyecto. esta se sube a través de el comando git.push. Se hace esto para que distintos desarrolladores creen dif versiones cn cambios  al final lo sube al MAIN asi todos lo ven.
