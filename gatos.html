@@ -27,7 +27,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #eee; /* Mantiene tu fondo gris original */
+      background-color: #eee;
       padding: 15px 40px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
@@ -46,15 +46,15 @@
       padding: 0;
     }
 
-    nav ul li a {
+    /* Estilos aplicados directamente al <li> ya que sacamos los enlaces <a> */
+    nav ul li {
       color: var(--text-main);
-      text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
       cursor: pointer;
     }
 
-    nav ul li a:hover {
+    nav ul li:hover {
       color: var(--primary);
     }
 
@@ -157,11 +157,11 @@
 <body>
 
   <nav>
-    <span>🐱 MICHIS SHOP</span>
+    <span>LOGO</span>
     <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Sección</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li>Inicio</li>
+      <li>Sección</li>
+      <li>Contacto</li>
     </ul>
   </nav>
 
@@ -184,7 +184,7 @@
     </div>
 
     <div class="card">
-      <img src="https://cdn2.thecatapi.com/images/MTY3ODIyNA.jpg" alt="Bengala">
+      <img src="https://www.zooplus.es/magazine/wp-content/uploads/2017/10/fotolia_82719975.webp" alt="Bengala">
       <div class="card-info">
         <div>
           <h2>Gatito Azul Ruso</h2>
@@ -196,7 +196,7 @@
     </div>
 
     <div class="card">
-      <img src="https://cdn2.thecatapi.com/images/MTY3ODIyNw.jpg" alt="Siames">
+      <img src="https://media-eu.husse.com/media/0e/90/61/1607080248/iStock-1076432222.jpg" alt="Siames">
       <div class="card-info">
         <div>
           <h2>Gatito Siamés</h2>
