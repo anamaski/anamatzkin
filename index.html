@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoFauna | Boutique de Mascotas Exóticas</title>
+    <style>
+        /* --- ESTILOS GENERALES Y VARIABLES --- */
+        :root {
+            --bg-principal: #0b1311;
+            --bg-tarjetas: #13221f;
+            --verde-neon: #00ffaa;
+            --verde-esmeralda: #0ea871;
+            --texto-blanco: #f4f7f6;
+            --texto-gris: #a0afac;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-blanco);
+            line-height: 1.6;
+        }
+
+        /* --- BARRA DE NAVEGACIÓN --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(11, 19, 17, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 255, 170, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--texto-blanco);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--verde-neon);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-gris);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--verde-neon);
+        }
+
+        .nav-botones {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-carrito {
+            background: none;
+            border: none;
+            color: var(--texto-blanco);
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .btn-carrito:hover {
+            color: var(--verde-neon);
+        }
+
+        /* --- SECCIÓN HERO (PORTADA) --- */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(11, 19, 17, 0.7), var(--bg-principal)), 
+                        url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--verde-neon);
+            text-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-gris);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primario {
+            background-color: var(--verde-esmeralda);
+            color: var(--texto-blanco);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 168, 113, 0.3);
+        }
+
+        .btn-primario:hover {
+            background-color: var(--verde-neon);
+            color: var(--bg-principal);
+            box-shadow: 0 4px 20px rgba(0, 255, 170, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* --- SECCIÓN PRODUCTOS / ANIMALES --- */
+        .contenedor-productos {
+            padding: 60px 8%;
+        }
+
+        .titulo-seccion {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--verde-neon);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tarjeta-animal {
+            background-color: var(--bg-tarjetas);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tarjeta-animal:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 255, 170, 0.3);
+        }
+
+        .imagen-animal {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .info-animal {
+            padding: 25px;
+        }
+
+        .categoria-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--verde-neon);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .info-animal h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            color: var(--texto-gris);
+            font-size: 14px;
+            margin-bottom: 20px;
+            height: 44px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .precio-comprar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--texto-blanco);
+        }
+
+        .btn-anadir {
+            background-color: transparent;
+            border: 2px solid var(--verde-esmeralda);
+            color: var(--verde-esmeralda);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-anadir:hover {
+            background-color: var(--verde-esmeralda);
+            color: var(--texto-blanco);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #060a09;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--texto-gris);
+            font-size: 14px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .navbar { padding: 20px 4%; }
+            .nav-links { display: none; } /* En una web real acá se armaría el menú hamburguesa */
+            .hero h1 { font-size: 36px; }
+            .contenedor-productos { padding: 40px 4%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <a href="#" class="logo">🌿 Exo<span>Fauna</span></a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Reptiles</a></li>
+            <li><a href="#">Anfibios</a></li>
+            <li><a href="#">Arácnidos</a></li>
+            <li><a href="#">Cuidados</a></li>
+        </ul>
+        <div class="nav-botones">
+            <button class="btn-carrito">🛒 (0)</button>
+            <a href="#" class="btn-primario" style="padding: 8px 20px; font-size: 14px;">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- PORTADA (HERO) -->
+    <header class="hero">
+        <h1>Ejemplares <span>Exóticos</span> Únicos</h1>
+        <p>Criadero legalizado y certificado. Llevá la belleza de la naturaleza más salvaje y exótica a tu hogar de forma responsable.</p>
+        <a href="#catalogo" class="btn-primario">Ver Catálogo</a>
+    </header>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <main class="contenedor-productos" id="catalogo">
+        <h2 class="titulo-seccion">Ejemplares Disponibles</h2>
+        
+        <div class="grid-productos">
+            
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=500" alt="Camaleón de Pantera" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Reptiles</span>
+                    <h3>Camaleón Pantera</h3>
+                    <p class="descripcion">Increíbles colores vivos y cambiantes. Ejemplar joven, adaptado perfectamente al cautiverio.</p>
+                    <div class="precio-comprar">
+                        <span class="precio">$250.000</span>
+                        <button class="btn-anadir">Ver más</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1548425121-82500d4df7f8?auto=format&fit=crop&q=80&w=500" alt="Gecko Crestado" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Reptiles</span>
+                    <h3>Gecko Crestado</h3>
+                    <p class="descripcion">Ideal para principiantes. No requiere iluminación compleja y tiene un temperamento súper dócil.</p>
+                    <div class="precio-comprar">
+                        <span class="precio">$85.000</span>
+                        <button class="btn-anadir">Ver más</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1589140417953-61b694f481e1?auto=format&fit=crop&q=80&w=500" alt="Rana Flecha Azul" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Anfibios</span>
+                    <h3>Rana Flecha Azul</h3>
+                    <p class="descripcion">Espectacular coloración azul eléctrica. Nacidas en cautiverio (no son venenosas debido a su dieta).</p>
+                    <div class="precio-comprar">
+                        <span class="precio">$120.000</span>
+                        <button class="btn-anadir">Ver más</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1603123853880-a15160d801d5?auto=format&fit=crop&q=80&w=500" alt="Tarántula de Rodillas Rojas" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Invertebrados</span>
+                    <h3>Tarántula Mexicana</h3>
+                    <p class="descripcion">Brachypelma hamorii. Una de las especies más estéticas y longevas del mundo de los artrópodos.</p>
+                    <div class="precio-comprar">
+                        <span class="precio">$65.000</span>
+                        <button class="btn-anadir">Ver más</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ExoFauna. Todos los derechos reservados. Venta e importación bajo normativas CITES.</p>
+    </footer>
+
+</body>
+</html>
