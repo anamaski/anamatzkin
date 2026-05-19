@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoFauna | Anfibios</title>
+    <style>
+        /* (Mismos estilos para mantener la estética) */
+        :root { --bg-principal: #0b1311; --bg-tarjetas: #13221f; --verde-neon: #00ffaa; --verde-esmeralda: #0ea871; --texto-blanco: #f4f7f6; --texto-gris: #a0afac; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-principal); color: var(--texto-blanco); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background-color: rgba(11, 19, 17, 0.95); border-bottom: 1px solid rgba(0, 255, 170, 0.1); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--texto-blanco); text-decoration: none; }
+        .logo span { color: var(--verde-neon); }
+        .nav-links { list-style: none; display: flex; gap: 35px; }
+        .nav-links a { text-decoration: none; color: var(--texto-gris); font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--verde-neon); }
+        .btn-carrito { background: none; border: none; color: var(--texto-blanco); font-size: 18px; }
+        .contenedor-productos { padding: 60px 8%; }
+        .titulo-seccion { font-size: 32px; margin-bottom: 40px; text-align: center; }
+        .titulo-seccion::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--verde-neon); margin: 10px auto 0; }
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .tarjeta-animal { background-color: var(--bg-tarjetas); border-radius: 15px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .imagen-animal { width: 100%; height: 230px; object-fit: cover; }
+        .info-animal { padding: 25px; }
+        .categoria-tag { font-size: 12px; text-transform: uppercase; color: var(--verde-neon); font-weight: bold; margin-bottom: 8px; display: inline-block; }
+        .info-animal h3 { font-size: 22px; margin-bottom: 10px; }
+        .descripcion { color: var(--texto-gris); font-size: 14px; margin-bottom: 20px; }
+        .precio-comprar { display: flex; justify-content: space-between; align-items: center; }
+        .precio { font-size: 20px; font-weight: bold; }
+        .btn-anadir { background-color: transparent; border: 2px solid var(--verde-esmeralda); color: var(--verde-esmeralda); padding: 8px 15px; border-radius: 20px; cursor: pointer; }
+        .btn-anadir:hover { background-color: var(--verde-esmeralda); color: var(--texto-blanco); }
+        footer { background-color: #060a09; text-align: center; padding: 30px; margin-top: 60px; color: var(--texto-gris); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌿 Exo<span>Fauna</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reptiles.html">Reptiles</a></li>
+            <li><a href="anfibios.html" class="active">Anfibios</a></li>
+            <li><a href="aracnidos.html">Arácnidos</a></li>
+        </ul>
+        <button class="btn-carrito">🛒 (0)</button>
+    </nav>
+
+    <main class="contenedor-productos">
+        <h2 class="titulo-seccion">Sección: Anfibios</h2>
+        <div class="grid-productos">
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1589140417953-61b694f481e1?auto=format&fit=crop&q=80&w=500" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Anfibios</span>
+                    <h3>Rana Flecha Azul</h3>
+                    <p class="descripcion">Espectacular coloración azul eléctrica.</p>
+                    <div class="precio-comprar"><span class="precio">$120.000</span><button class="btn-anadir">Añadir</button></div>
+                </div>
+            </div>
+            <div class="tarjeta-animal">
+                <img src="https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&q=80&w=500" class="imagen-animal">
+                <div class="info-animal">
+                    <span class="categoria-tag">Anfibios</span>
+                    <h3>Rana Verde de Ojos Rojos</h3>
+                    <p class="descripcion">Un clásico hermoso de las selvas tropicales.</p>
+                    <div class="precio-comprar"><span class="precio">$110.000</span><button class="btn-anadir">Añadir</button></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><p>© 2026 ExoFauna. Venta bajo normativas CITES.</p></footer>
+</body>
+</html>
