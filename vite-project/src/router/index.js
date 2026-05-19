@@ -11,9 +11,7 @@ const routes = [
   { path: '/aracnidos', component: Aracnidos }
 ]
 
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
   routes
 })
-
-export default router

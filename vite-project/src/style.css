@@ -255,4 +255,6 @@
         }
 
         /* Ocultar sección por defecto */
-        .oculto 
+        .oculto {
+    display: none !important;
+}
